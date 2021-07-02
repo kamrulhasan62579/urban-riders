@@ -1,0 +1,25 @@
+.newUser{
+    justify-content: center;
+    text-align: center;
+}
+.input{
+    height: 45px;
+    width: 500px;
+    font-size: 20px;
+}
+.error{
+    font-size: 10px;
+    color: red;
+}
+.login1{
+    background-image: -webkit-linear-gradient(orange, aqua);
+    height: 200vh;
+}
+.login1 button{
+    height: 35px;
+    width: 200px;
+    border-radius: 15%;
+}
+.button{
+    text-align: center;
+}
