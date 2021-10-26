@@ -79,47 +79,28 @@ const Login = () => {
         });
     }
     return (
-      <div className="login1">
+      <div className="login1 pt-5">
             {
                 newUser ? <div className="newUser">
-                    <h1 style={{textAlign: 'center'}}>Sign up form</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                    <label>First name</label>
+                                            <h1 style={{textAlign: 'center'}}>Sign up form</h1>
+                    <label>Full name</label>
                     <br/>
-                    <input className="input" {...register("firstName", { required: true })} />
-                    <br/>{errors.firstName && errors.firstName.type === "required" && <span className="error">First name is required</span>}
-                    <br/>
-                    <label>Last name</label>
-                    <br/>
-                    <input className="input" {...register("lastName", { required: true })} />
-                    <br/>{errors.lastName && errors.lastName.type === "required" && <span className="error">Last name is required</span>}
-                    <br/>
+                    <input className="input" {...register("fullName", { required: true })} /><br/>
+                    {errors.fullName && errors.fullName.type === "required" && <span className="error">Full name is required</span>}
+                    <br/> 
                     <label>Email</label>
                     <br/>
                     <input className="input" type="text" {...register("email", {required: true, pattern: /\S+@\S+\.\S+/})} />
-                    <br/>
+                   <br/>
+    
                     {errors.email && errors.email.type === "required" && <span className="error">Email is required</span>}
                     {errors.email && errors.email.type === "pattern" && <span className="error">You should insert email like  /\S+@\S+\.\S+/ pattern</span> }
-                    <br/>
-                    <label>Mobile number</label>
-                    <br/>
-                    <input className="input" type="tel" {...register("mobileNumber", {required: true, minLength: 6, maxLength: 12})} />
-                    <br/>{errors.mobileNumber && errors.mobileNumber.type === "required" && <span className="error">Mobile number is required</span>}
-                    <br/>
+                    
                     <div>
-                        <label>Are you a developer?</label>
-                        <br/><span>Yes</span> <input {...register("Developer", { required: true })} type="radio" value="Yes" />
-                        <br/><span>No</span><input {...register("Developer", { required: true })} type="radio" value="No" />
-                        <br/>
-                        <label>Select your gender</label>
-                        <br/>
-                        <select {...register("gender", { required: true })}>
-                            <option value="female">female</option>
-                            <option value="male">male</option>
-                            <option value="other">other</option>
-                        </select>
+                   
                     </div>
-                <br/>
+               <br/>
                 <label>Password</label>
                 <br/>
                 <input className="input"
@@ -131,7 +112,7 @@ const Login = () => {
                 />
                 <br/>{errors.password && errors.password.type === "required" && <span className="error">You must specify a password</span>}
                 {errors.password && errors.password.type === "pattern" && <span className="error">Password must have at least 1 uppercase letter, 1 lowercase letter, 1 special character, 1 number & min 8 characters, max 30 characters.</span> }
-                <br/> <br/>
+                <br/>
                 <label>Repeat password</label>
                 <br/>
                 <input className="input"
@@ -140,14 +121,14 @@ const Login = () => {
                     validate: value =>
                         value === password.current || "The passwords do not match"
                     }))} />
-                    {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
+                    {errors.password_repeat && <p className="error">{errors.password_repeat.message}</p>}
                     <br/> <br/>
                     <input style={{background: 'brown'}} className="input" type="submit" />
                 </form>
             </div> :
             <div className="newUser">
-            <h1 style={{textAlign: 'center'}}>Log In form</h1>
               <form onSubmit={handleSubmit(onSubmit)}>
+                              <h1 style={{textAlign: 'center'}}>Log In form</h1>
                 <label>Email</label>
                 <br/>
                 <input className="input" type="text" {...register("email", {required: true})} />
@@ -158,7 +139,7 @@ const Login = () => {
                 <br/>
                 <input className="input" type="password" {...register( "password",({required: true}))}/>
                 <br/>{errors.password && errors.password.type === "required" && <span className="error">Password is required</span>}
-                <br/> <br/>
+                <br/> 
                 <input style={{background: 'brown'}} className="input" type="submit" />
           </form>
       </div>

@@ -9,6 +9,9 @@ const Home = () => {
     return (
         <div className="home-content">
             {
+                moto.length === 0 && <p style={{textAlign: 'center'}}>Loading...</p>
+            }
+            {
                 moto.map(mot => <Motor key={mot.id} motor={mot}></Motor> )
             }
         </div>

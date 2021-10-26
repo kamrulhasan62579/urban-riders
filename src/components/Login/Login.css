@@ -1,6 +1,7 @@
 .newUser{
     justify-content: center;
-    text-align: center;
+    display: flex;
+    margin: 0;
 }
 .input{
     height: 45px;
@@ -13,7 +14,7 @@
 }
 .login1{
     background-image: -webkit-linear-gradient(orange, aqua);
-    height: 200vh;
+    height: 98.99vh;
 }
 .login1 button{
     height: 35px;

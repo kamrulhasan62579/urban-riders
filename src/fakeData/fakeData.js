@@ -9,7 +9,7 @@ const motors = [
     },
     {   "id": 3,
         "title": "Bus",
-       " img": "https://i.ibb.co/3k021dS/Frame-1.png" 
+        "img": "https://i.ibb.co/3k021dS/Frame-1.png" 
     },
     {   "id": 4,
         "title": "Train",

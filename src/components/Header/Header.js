@@ -8,7 +8,7 @@ const Header = () => {
             <nav>
                <div className="header-container">
                <div className="logo">
-                    Urban Riders
+                  Ride Sharing
                 </div>
                 <ul>
 
